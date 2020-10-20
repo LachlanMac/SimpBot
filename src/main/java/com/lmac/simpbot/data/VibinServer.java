@@ -9,12 +9,12 @@ public class VibinServer {
 
 	private String name;
 	private long id;
-	private List<VibinChannel> channels;
+	private List<VibinVoiceChannel> channels;
 
 	public VibinServer(String name, long id) {
 		this.name = name;
 		this.id = id;
-		channels = new ArrayList<VibinChannel>();
+		channels = new ArrayList<VibinVoiceChannel>();
 	}
 
 	public void sync(JDA jda) {
@@ -37,15 +37,15 @@ public class VibinServer {
 		this.id = id;
 	}
 
-	public void addChannel(VibinChannel channel) {
+	public void addChannel(VibinVoiceChannel channel) {
 		channels.add(channel);
 	}
 
-	public List<VibinChannel> getChannels() {
+	public List<VibinVoiceChannel> getChannels() {
 		return channels;
 	}
 
-	public VibinChannel getChannelByID(long id) {
+	public VibinVoiceChannel getChannelByID(long id) {
 
 		for (int i = 0; i < channels.size(); i++) {
 			if (channels.get(i).getId() == id) {
